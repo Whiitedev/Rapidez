@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selecciona tu rol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #eef1f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #0D6EFD;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .option {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px 10px;
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .option:hover {
+      border-color: #0D6EFD;
+      box-shadow: 0 6px 16px rgba(13, 110, 253, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .option img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 12px;
+    }
+
+    .option p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selecciona tu rol institucional</h1>
+    <div class="options">
+      <a href="encargado_impresiones/index_encargado_impresiones.html" class="option">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995528.png" alt="Encargado de impresión" />
+        <p>Encargado de impresión</p>
+      </a>
+      <a href="directivos/index_directivos.html" class="option">
+        <img src="https://cdn-icons-png.flaticon.com/512/3879/3879682.png" alt="Directivo" />
+        <p>Directivo</p>
+      </a>
+      <a href="docentes/index_docentes.html" class="option">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Docente" />
+        <p>Docente</p>
+      </a>
+      <a href="encargado_computadoras/index_encargado_computadoras.html" class="option">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Encargado de computadoras" />
+        <p>Encargado de computadoras</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
