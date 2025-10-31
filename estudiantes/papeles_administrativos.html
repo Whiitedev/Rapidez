@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeles Administrativos - Estudiante</title>
+    <link rel="shortcut icon" type="image/png" href="../images/logo-wbg.png" />
+    <link rel="stylesheet" href="../css/estilos_estudiantes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tabs .tab.activo {
+            background-color: #0069d9;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="../img/logo.png" alt="Logo" class="logo" />
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="index_estudiante.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="cuaderno_estudiantes.html"><i class="fas fa-book"></i> Cuaderno de Comunicados</a></li>
+            <li class="activo"><a href="#"><i class="fas fa-file-alt"></i> Papeles Administrativos</a></li>
+            <li><a href="retiro_computadoras.html"><i class="fas fa-laptop"></i> Retiro de Computadoras</a></li>
+            <li><a href="turno_impresora.html"><i class="fas fa-print"></i> Turno Impresora</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <header>
+            <button class="menu-toggle mobile" id="menuToggleMobile"><i class="fas fa-bars"></i></button>
+            <h1>Papeles Administrativos</h1>
+                 <div class="usuario" id="usuarioMenu">
+    <span id="usuarioTrigger">Estudiante</span>
+    <img src="../img/user_icon.png" alt="Usuario" id="usuarioTriggerImg">
+
+    <!-- Menú desplegable -->
+    <div class="usuario-dropdown" id="usuarioDropdown">
+        <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+</div>
+
+        </header>
+
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab activo" data-tab="certificado">Certificado de alumno</button>
+            <button class="tab" data-tab="ficha">Ficha</button>
+            <button class="tab" data-tab="regular">Alumno regular</button>
+            <button class="tab" data-tab="beca">Beca alimentaria</button>
+        </div>
+
+        <!-- Contenido de Certificado de Alumno -->
+        <div id="certificado" class="tab-content active">
+            <div class="contenedor-tabla">
+                <table class="tabla-notas tabla-acciones">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>justf. Familiar</td>
+                            <td>09/06/2025</td>
+                            <td><span style="color: green; font-weight: bold;">Visto</span></td>
+                            <td>
+                                <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>justf. Medico</td>
+                            <td>01/05/2025</td>
+                            <td><span style="color: orange; font-weight: bold;">Pendiente</span></td>
+                            <td>
+                                <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Contenido de Ficha -->
+        <div id="ficha" class="tab-content">
+            <div class="contenedor-tabla">
+                <table class="tabla-notas tabla-acciones">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Ficha de salud ED. Física 2025</td>
+                            <td>
+                                <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Ficha de Reinscripción</td>
+                            <td>
+                                <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>F. de Inscripción</td>
+                            <td>
+                                <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Contenido de Alumno Regular -->
+        <div id="regular" class="tab-content">
+            <p>No hay documentos cargados para Alumno regular.</p>
+        </div>
+
+        <!-- Contenido de Beca Alimentaria -->
+        <div id="beca" class="tab-content">
+            <p>No hay documentos cargados para Beca alimentaria.</p>
+        </div>
+    </div>
+ <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://instagram.com/tu_usuario" target="_blank" class="footer-link">Instagram
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="footer-icon">
+                </a>
+                <a href="mailto:tuemail@gmail.com" class="footer-link">@gmail.com</a>
+                <span class="footer-copy">© 2025</span>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/menu.js"></script>
+    <script>
+        document.querySelectorAll(".tabs .tab").forEach(button => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".tabs .tab").forEach(btn => btn.classList.remove("activo"));
+                document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
+
+                button.classList.add("activo");
+                document.getElementById(button.dataset.tab).classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>

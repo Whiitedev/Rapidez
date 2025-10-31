@@ -1,0 +1,525 @@
+html, body {
+    overflow-x: hidden;
+    
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: white;
+    min-height: 100vh;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.sidebar .logo {
+    width: 100px;
+     margin-left: 50px; /* <-- Añade esta línea */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul li.activo a {
+    color: #0D6EFD;
+}
+
+/* Botones toggle */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-toggle.mobile {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Contenedor principal */
+.contenido {
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: calc(100% - 240px); /* se adapta al ancho restante del sidebar */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        margin-left: 0;
+        width: 100%; /* ocupa todo el ancho en móviles */
+    }
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #0D6EFD;
+    padding: 4px 20px;
+    color: white;
+    min-height: 86px;
+    max-height: 80px;
+    flex-wrap: wrap; /* permite que h1 y usuario bajen si no caben */
+}
+
+header h1 {
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.usuario img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Ajustes en móviles */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.1em;
+        flex: 1 1 100%; /* h1 ocupa toda la fila si hace falta */
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .usuario {
+        justify-content: center;
+        flex: 1 1 100%; /* usuario en otra fila */
+        margin-bottom: 5px;
+    }
+}
+
+/* Tablas */
+.contenedor-tabla {
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.tabla-notas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 500px;
+}
+
+.tabla-notas th, .tabla-notas td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-notas th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Cursores y acciones */
+.no-click {
+    cursor: not-allowed;
+}
+
+.accion {
+    text-decoration: none;
+    margin-right: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.accion.editar {
+    color: blue;
+}
+
+.accion.borrar {
+    color: red;
+}
+
+/* Tarjetas (cards) */
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #1976d2;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    /* Elimina margin-top: auto; */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    font-weight: bold;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+    }
+    .sidebar.activo {
+        transform: translateX(0);
+    }
+    .menu-toggle.mobile {
+        display: block;
+    }
+    .close-sidebar {
+        display: block;
+    }
+    .contenido {
+        margin-left: 0;
+    }
+}
+
+
+/* Botones de pestañas */
+.tabs {
+    display: flex;
+    gap: 15px; /* separación entre botones */
+    margin: 20px;
+    flex-wrap: wrap; /* que bajen si no entran */
+}
+
+.tabs .tab {
+    background-color: #ffffff; /* blanco */
+    color: #0D6EFD; /* azul del header */
+    border: 2px solid #0D6EFD;
+    border-radius: 12px; /* esquinas redondeadas */
+    padding: 12px 24px; /* más grandes */
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.tabs .tab:hover {
+    background-color: #0D6EFD;
+    color: #fff;
+}
+
+/* Activo */
+.tabs .tab.activo {
+    background-color: #0D6EFD;
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.05); /* leve agrandamiento */
+}
+
+.botones-container {
+  display: flex;
+  gap: 10px; /* espacio entre botones */
+  flex-wrap: wrap; /* permite que bajen si no entran */
+  justify-content: center; /* centrar en pantalla */
+}
+
+.botones-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  flex: 1; /* se ajustan al ancho disponible */
+  min-width: 120px; /* ancho mínimo para que no se achiquen demasiado */
+  max-width: 200px;
+}
+
+/* Ajuste especial para pantallas pequeñas */
+@media (max-width: 600px) {
+  .botones-container {
+    flex-direction: column; /* los pone en columna en celular */
+    align-items: center;
+  }
+
+  .botones-container button {
+    width: 80%; /* ocupan buen espacio pero no todo */
+    max-width: 250px;
+  }
+}
+
+
+.calendar-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: nowrap; /* nunca bajan de fila */
+}
+
+.calendar-nav button {
+  background-color: #0D6EFD;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  min-width: 120px; /* ancho mínimo para que no se achiquen */
+  flex: 1; /* se adaptan al espacio disponible */
+  max-width: 180px; /* ancho máximo */
+}
+
+.calendar-nav button:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+}
+
+/* Para pantallas muy chicas, reducimos tamaño de fuente y padding si hace falta */
+@media (max-width: 400px) {
+  .calendar-nav button {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: 100px;
+    max-width: 140px;
+  }
+}
+
+
+
+/* SEPARCION DE CUADROS */
+
+.contenedor-seccion {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* separación entre cada card */
+    align-items: center; /* centra las tarjetas horizontalmente */
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;       /* ocupa todo el ancho disponible */
+    max-width: 1200px;  /* pero no más de 800px en pantallas grandes */
+    box-sizing: border-box; /* incluye padding y borde dentro del ancho */
+}
+
+/* Opcional: ajustar padding en móviles muy pequeños */
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+    }
+}
+
+
+
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.1em;
+        flex: 1 1 auto;       /* permite que h1 use el espacio disponible */
+        text-align: center;   /* mantiene el título centrado */
+        margin-bottom: 0;     /* quitamos margen que empuja la foto */
+    }
+
+    header .usuario span {
+        display: none !important; /* oculta el nombre */
+    }
+
+    header .usuario {
+        flex: 0 0 auto !important;       /* evita que el contenedor se estire o baje */
+        justify-content: flex-end !important; /* foto alineada a la derecha */
+        margin-bottom: 0 !important;     /* evita margen que haga bajar la foto */
+        align-self: center;               /* mantiene alineación vertical */
+    }
+}
+
+
+
+
+/* Dropdown del usuario */
+.usuario-dropdown {
+    position: absolute;
+    top: 70px; /* ajusta según tu header */
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: none; /* oculto por defecto */
+    z-index: 2000;
+}
+
+.usuario-dropdown button {
+    background: #0D6EFD;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.usuario-dropdown button:hover {
+    background: #0b5ed7;
+}
+
+/* Para que el contenedor .usuario no corte el menú */
+.usuario {
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.btn-aceptar {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-rechazar {
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-aceptar:hover { background: #218838; }
+.btn-rechazar:hover { background: #c82333; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+.tabla-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.tabla-scroll table {
+  min-width: 600px;
+}

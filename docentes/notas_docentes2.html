@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notas de Estudiantes</title>
+      <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../images/logo-wbg.png"
+    />
+
+    <link rel="stylesheet" href="../css/estilos_docente.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="../img/logo.png" alt="Logo" class="logo" />
+            <button class="close-sidebar" id="closeSidebar" aria-label="Cerrar menú">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index_docentes.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li class="activo"><a href="notas_docentes2.html"><i class="fas fa-graduation-cap"></i> Notas de Estudiantes</a></li>
+                <li><a href="pedidos_imprecion.html"><i class="fas fa-print"></i> Pedido de Impresión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+       <header>
+            <button class="menu-toggle mobile" id="menuToggleMobile"><i class="fas fa-bars"></i></button>
+            <h1>Notas de Estudiantes</h1>
+
+
+            <div class="usuario" id="usuarioMenu">
+    <span id="usuarioTrigger">Docente</span>
+    <img src="../img/user_icon.png" alt="Usuario" id="usuarioTriggerImg">
+
+    <!-- Menú desplegable -->
+    <div class="usuario-dropdown" id="usuarioDropdown">
+        <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+</div>
+
+
+        </header>
+
+        <main>
+            <!-- primera tabla-->
+            <div class="contenedor-tabla">
+                <h2>Estudiantes - 3°5</h2>
+                <table class="tabla-notas">
+                    <thead>
+                        <tr>
+                            <th class="no-click">ID</th>
+                            <th class="no-click">Estudiante</th>
+                            <th class="no-click">Materia</th>
+                            <th class="no-click">Nota</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="no-click">001</td>
+                            <td class="no-click">jhoellimachi&652@gmail.com</td>
+                            <td class="no-click">Física</td>
+                            <td class="no-click">10.0</td>
+                            <td>
+                                <a href="#" class="accion editar"><i class="fas fa-pen"></i></a>
+                                <a href="#" class="accion borrar"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-click">002</td>
+                            <td class="no-click">juanmendez123@gmail.com</td>
+                            <td class="no-click">Matemática</td>
+                            <td class="no-click">9.0</td>
+                            <td>
+                                <a href="#" class="accion editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="accion borrar"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-click">003</td>
+                            <td class="no-click">berenjena777@gmail.com</td>
+                            <td class="no-click">Química</td>
+                            <td class="no-click">7.0</td>
+                            <td>
+                                <a href="#" class="accion editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="accion borrar"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+             <!-- segunda tabla-->
+            <div class="contenedor-tabla">
+                <h2>Estudiantes - 3°6</h2>
+                <table class="tabla-notas">
+                    <thead>
+                        <tr>
+                            <th class="no-click">ID</th>
+                            <th class="no-click">Estudiante</th>
+                            <th class="no-click">Materia</th>
+                            <th class="no-click">Nota</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="no-click">001</td>
+                            <td class="no-click">jhoellimachi&652@gmail.com</td>
+                            <td class="no-click">Física</td>
+                            <td class="no-click">10.0</td>
+                            <td>
+                                <a href="#" class="accion editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="accion borrar"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-click">002</td>
+                            <td class="no-click">juanmendez123@gmail.com</td>
+                            <td class="no-click">Matemática</td>
+                            <td class="no-click">9.0</td>
+                            <td>
+                                <a href="#" class="accion editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="accion borrar"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-click">003</td>
+                            <td class="no-click">berenjena777@gmail.com</td>
+                            <td class="no-click">Química</td>
+                            <td class="no-click">7.0</td>
+                            <td>
+                                <a href="#" class="accion editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="accion borrar"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        
+        </main>
+    </div>
+<!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://instagram.com/tu_usuario" target="_blank" class="footer-link">Instagram
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="footer-icon">
+                </a>
+                <a href="mailto:tuemail@gmail.com" class="footer-link">@gmail.com</a>
+                <span class="footer-copy">© 2025</span>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Botón hamburguesa
+        document.getElementById('menuToggleMobile').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('activo');
+        });
+
+        // Botón cerrar sidebar
+        document.getElementById('closeSidebar').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.remove('activo');
+        });
+    </script>
+    <!-- Scripts -->
+    <script src="../js/menu.js"></script>
+</body>
+</html>

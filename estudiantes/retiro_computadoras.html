@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pedido de Impresión - Docente</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../images/logo-wbg.png"
+    />
+<link rel="shortcut icon" type="image" href="../images/profile/user-6.jpg" />
+<link rel="stylesheet" href="../css/estilos_estudiantes.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="shortcut icon" type="image/png" href="./assets/images/logos/favicon.png" />
+<style>
+/* Aseguramos que el contenido de los pasos mantenga un buen padding */
+.contenido main {
+    padding: 20px;
+}
+
+/* Estilos específicos para los pasos (cards) */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Ajustes para inputs y botones dentro de las cards */
+.card input[type="text"],
+.card input[type="file"],
+.card input[type="number"],
+.card textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.card button {
+    background: #006aff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button.secondary {
+    background: #555;
+    margin-left: 10px;
+}
+
+/* Responsive pequeño ajuste */
+@media (max-width: 768px) {
+    .contenido {
+        margin-left: 0 !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Barra lateral -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <img src="../img/logo.png" alt="Logo" class="logo" />
+        <button class="close-sidebar" id="closeSidebar" aria-label="Cerrar menú">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+     <ul>
+            <li ><a href="index_estudiante.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="cuaderno_estudiantes.html"><i class="fas fa-book"></i> Cuaderno de Comunicados</a></li>
+            <li><a href="papeles_administrativos.html"><i class="fas fa-file-alt"></i> Papeles Administrativos</a></li>
+            <li class="activo"><a href="retiro_computadoras.html"><i class="fas fa-laptop"></i> Retiro de Computadoras</a></li>
+            <li><a href="turno_impresora.html"><i class="fas fa-print"></i> Turno Impresora</a></li>
+        </ul>
+</aside>
+
+<!-- Contenido principal -->
+<div class="contenido">
+    <header>
+        <button class="menu-toggle mobile" id="menuToggleMobile"><i class="fas fa-bars"></i></button>
+        <h1>Pedido de impresión</h1>
+            <div class="usuario" id="usuarioMenu">
+    <span id="usuarioTrigger">Estudiante</span>
+    <img src="../img/user_icon.png" alt="Usuario" id="usuarioTriggerImg">
+
+    <!-- Menú desplegable -->
+    <div class="usuario-dropdown" id="usuarioDropdown">
+        <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+</div>
+
+    </header>
+
+    <main>
+        <!-- Paso 1 -->
+        <div class="card" id="step1">
+            <h3>Seleccione la cantidad de Notebooks</h3>
+            <p><strong>Cantidad de Notebooks</strong> <input type="text" /></p>
+            <button onclick="nextStep(1)">Confirmar</button>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="card" id="step2" style="display:none;">
+            <h3>Su pedido se realizo con exito, ve a retirarlas</h3>
+            
+            
+            <p>Adjuntar comprobante</p><input type="file" />
+            <button onclick="nextStep(2)">Continuar</button>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="card" id="step3" style="display:none;">
+            <h3>Turno Impresora (3/3)</h3>
+            <p><strong>Pago exitoso</strong></p>
+            <p>Fecha: 4/07/2025 - 12:00hs</p>
+            <p>Nombre: Profesor</p>
+            <p>Curso: 6°4</p>
+            <p>Archivo: foto.jpg</p>
+            <button>Descargar</button>
+            <button class="secondary" onclick="finish()">Finalizar</button>
+        </div>
+    </main>
+</div>
+ <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://instagram.com/tu_usuario" target="_blank" class="footer-link">Instagram
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="footer-icon">
+                </a>
+                <a href="mailto:tuemail@gmail.com" class="footer-link">@gmail.com</a>
+                <span class="footer-copy">© 2025</span>
+            </div>
+        </footer>
+    </div>
+<script>
+// Activar el enlace del menú según la página actual
+const links = document.querySelectorAll('.sidebar ul li a');
+const currentPath = window.location.pathname.split("/").pop();
+
+links.forEach(link => {
+    if(link.getAttribute('href') === currentPath){
+        links.forEach(l => l.parentElement.classList.remove('activo'));
+        link.parentElement.classList.add('activo');
+    }
+});
+
+function nextStep(current) {
+    document.getElementById("step" + current).style.display = "none";
+    document.getElementById("step" + (current + 1)).style.display = "block";
+}
+
+function finish() {
+    alert("Proceso finalizado");
+    window.location.href = "#"; // Cambia por la ruta que quieras
+}
+</script>
+
+<script src="../js/menu.js"></script>
+</body>
+</html>

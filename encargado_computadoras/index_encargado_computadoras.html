@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - Encargado de computadoras</title>
+
+   <link
+        rel="shortcut icon"
+        type="image/png"
+        href="../images/logo-wbg.png"
+    />
+  <link rel="stylesheet" href="../css/estilos_encargado_computadoras.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Barra lateral -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/logo.png" alt="Logo" class="logo" />
+      <button class="close-sidebar" id="closeSidebar" aria-label="Cerrar menú">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+    </div>
+    <ul>
+      <li class="activo"><a href="index_encargado_computadoras.html"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="registro_computadoras.html"><i class="fas fa-desktop"></i> Registro de Computadoras</a></li>
+      <li><a href="solicitudes_reserva.html"><i class="fas fa-calendar-check"></i> Solicitudes de reserva</a></li>
+      <li><a href="registro_uso.html"><i class="fas fa-clipboard-list"></i> Registro de uso</a></li>
+    </ul>
+  </aside>
+
+  <!-- Contenido principal -->
+  <div class="contenido">
+    <header>
+      <button class="menu-toggle mobile" id="menuToggleMobile"><i class="fas fa-bars"></i></button>
+      <h1>Inicio</h1>
+      <div class="usuario" id="usuarioMenu">
+        <span id="usuarioTrigger">Encargado de computadoras</span>
+        <img src="../img/user_icon.png" alt="Usuario" id="usuarioTriggerImg"/>
+        <div class="usuario-dropdown" id="usuarioDropdown">
+          <button id="logoutBtn">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+
+     <main class="noticias-grid">
+            <div class="card">
+                <img src="../img/acto_escuela.jpg" alt="Escuela">
+                <p>El 5 de julio de 2025 se conmemoraron los 50 años de la Escuela Técnica 20 de 20...</p>
+            </div>
+            <div class="card">
+                <img src="../img/becas_ciudad.jpg" alt="Beca Ciudad">
+                <p>¡Inscribite ahora!</p>
+            </div>
+            <div class="card">
+                <img src="../img/becas_alimentarias.png" alt="Becas Alimentarias">
+                <p>Inscribite ya a las becas</p>
+            </div>
+            <div class="card">
+                <img src="../img/acto_agosto.jpg" alt="Acto 17 de agosto">
+                <p>El pasado 17 de agosto de 2025 se realizó un emotivo acto...</p>
+            </div>
+            <div class="card">
+                <img src="../img/ropa_indumentaria.jpg" alt="Indumentaria">
+                <p>Adquiere la nueva indumentaria de la escuela y representa este sentimiento </p>
+            </div>
+        </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="https://instagram.com/tu_usuario" target="_blank" class="footer-link">Instagram
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="footer-icon"/>
+      </a>
+      <a href="mailto:tuemail@gmail.com" class="footer-link">@gmail.com</a>
+      <span class="footer-copy">© 2025</span>
+    </div>
+  </footer>
+
+  <script src="../js/menu.js"></script>
+</body>
+</html>

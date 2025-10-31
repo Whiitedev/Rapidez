@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notas - Directivos</title>
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="../images/logo-wbg.png"
+    />
+
+    <link rel="stylesheet" href="../css/estilos_directivos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+    <img src="../img/logo.png" alt="Logo" class="logo" />
+    <button class="close-sidebar" id="closeSidebar" aria-label="Cerrar menú">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+        </div>
+        <ul>
+            <li ><a href="index_directivos.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="gestion_de_usuarios_directivos.html"><i class="fas fa-graduation-cap"></i> Gestion de usuarios</a></li>
+            <li class="activo"><a href="notas_directivos.html"><i class="fas fa-print"></i> Notas de estudiantes</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <header>
+            <button class="menu-toggle mobile" id="menuToggleMobile"><i class="fas fa-bars"></i></button>
+            <h1> Notas de estudiantes</h1>
+
+            <div class="usuario" id="usuarioMenu">
+    <span id="usuarioTrigger">Docente</span>
+    <img src="../img/user_icon.png" alt="Usuario" id="usuarioTriggerImg">
+
+    <!-- Menú desplegable -->
+    <div class="usuario-dropdown" id="usuarioDropdown">
+        <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+</div>
+
+
+        </header>
+
+        <main class="contenedor-seccion">
+            <section class="tabla-usuarios">
+  <div class="tabla-usuarios__grupo">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Estudiantes</th>
+          <th>Materia</th>
+          <th>Notas</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>sofia.perez90@gmail.com</td>
+          <td>Física</td>
+          <td>9.5</td>
+          <td>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            <a href="#"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>lucas.ramos88@yahoo.com</td>
+          <td>Matemática</td>
+          <td>8.0</td>
+          <td>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            <a href="#"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>melina.torres@outlook.com</td>
+          <td>Lengua</td>
+          <td>10.0</td>
+          <td>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            <a href="#"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>004</td>
+          <td>agustin.morales@edu.ar</td>
+          <td>Tec. de la Repre.</td>
+          <td>7.5</td>
+          <td>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            <a href="#"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>005</td>
+          <td>valentina.gomez23@gmail.com</td>
+          <td>Historia</td>
+          <td>9.0</td>
+          <td>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            <a href="#"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>006</td>
+          <td>diego.fernandez@gmail.com</td>
+          <td>Educación Cívica</td>
+          <td>8.5</td>
+          <td>
+            <a href="#"><i class="fas fa-pen"></i></a>
+            <a href="#"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+        </main>
+    </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://instagram.com/tu_usuario" target="_blank" class="footer-link">Instagram
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="footer-icon">
+                </a>
+                <a href="mailto:tuemail@gmail.com" class="footer-link">@gmail.com</a>
+                <span class="footer-copy">© 2025</span>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../js/menu.js"></script>
+</body>
+</html>
